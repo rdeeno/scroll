@@ -3,15 +3,22 @@
     padding: 0;
 }
 
-.myList li {
+.myList {
     padding-left: 7px;
     margin-bottom: 15px;
-    transition: all .2s ease-in-out;
-    transform: translate3d(0px, 30px, 0);
-    opacity: 0;
+    transition: all 15s ease-in-out;
+    transform: translateX(100%);
 }
 
-.myList li.active {
-    transform: translate3d(0px, 0, 0);
-    opacity: 1;
+.fromBottom {
+    transform: translateX(0);
+}
+
+.myList2 {
+    transform: translateX(-100%);
+    transition: 10s;
+}
+
+.fromLeft {
+    transform: translateX(0);
 }

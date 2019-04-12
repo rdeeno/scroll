@@ -1,27 +1,27 @@
 class Scroller {
     constructor() {
-        this.list = document.querySelector('.myList')
-        this.getAttrName = this.list.getAttribute('data-effect')
-        // console.log(this.getAttrName);
-        // window.addEventListener("scroll", dealWithScrolling, false);
-        if (this.getAttrName == 'moveLeft') {
-            this.left()
+        this.selector = [...document.querySelectorAll('.effect')]
+        this.selector.forEach(el => {
+            this.getAttrName = el.getAttribute('data-effect')
+        })
+        if (this.getAttrName === 'fromBottom') {
+            this.fromBottom()
+        }
+        if (this.getAttrName === 'fromLeft') {
+            this.fromLeft()
         }
     }
-
-
-    left() {
-        console.log('work');
-        var listItem = document.querySelectorAll('li')
-        listItem.forEach(elm => {
-            setTimeout(() => {
-                elm.classList.add('active')
-            }, 3000);
+    fromBottom() {
+        var listItems = document.querySelectorAll('.effect')
+        listItems.forEach(elm => {
+            elm.classList.add(this.getAttrName)
         })
-
-
     }
-
-
+    fromLeft() {
+        var listItem = document.querySelectorAll('.effect')
+        listItem.forEach(elm => {
+            elm.classList.add(this.getAttrName)
+        })
+    }
 }
 new Scroller()
