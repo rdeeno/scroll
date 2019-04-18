@@ -5,21 +5,14 @@ class Scroller {
             this.getAttrName = el.getAttribute('data-effect')
         })
         if (this.getAttrName === 'fromBottom') {
-            this.fromBottom()
+            this.animate(this.getAttrName)
         }
         if (this.getAttrName === 'fromLeft') {
-            this.fromLeft()
+            this.animate(this.getAttrName)
         }
     }
-    fromBottom() {
-        var listItems = document.querySelectorAll('.effect')
-        listItems.forEach(elm => {
-            elm.classList.add(this.getAttrName)
-        })
-    }
-    fromLeft() {
-        var listItem = document.querySelectorAll('.effect')
-        listItem.forEach(elm => {
+    animate(cls) {
+        this.selector.forEach(elm => {
             elm.classList.add(this.getAttrName)
         })
     }
